@@ -56,5 +56,8 @@
     <string name="no_number">Please enter a number to make a guess!</string>
     <string name="signature">by Jason Hall - imherolddev</string>
     <string name="number_key">number</string>
+    <string name="warn_low">Maximum must be higher than minimum</string>
+    <string name="warn_high">Minimum must be lower than maximum</string>
+    <string name="warn_diff">Maximum must be 4 more than minimum</string>
 
 </resources>

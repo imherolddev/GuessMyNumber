@@ -1,6 +1,14 @@
 package com.imherolddev.guessmynumber;
 
+import android.content.Context;
+
 public class Comparator {
+	
+	Context c;
+	
+	public Comparator(Context c) {
+		this.c = c;
+	}
 
 	private String result = "";
 
@@ -9,14 +17,14 @@ public class Comparator {
 		if (guess != number) {
 
 			if (guess > number)
-				result = "high";
+				result = c.getString(R.string.high);
 			else {
-				result = "low";
+				result = c.getString(R.string.low);
 			}
 
 		} else {
 
-			result = "correct";
+			result = c.getString(R.string.correct);
 
 		}
 

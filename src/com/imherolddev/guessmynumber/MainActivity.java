@@ -24,7 +24,7 @@ public class MainActivity extends ActionBarActivity implements TextWatcher {
 
 	SharedPreferences sharedPrefs;
 	private NumberGenerator gen = new NumberGenerator();
-	private Comparator check = new Comparator();
+	private Comparator check = new Comparator(this);
 
 	private String minGuess;
 	private String maxGuess;
@@ -190,12 +190,11 @@ public class MainActivity extends ActionBarActivity implements TextWatcher {
 
 	public void compareGuess(View v) {
 
+		this.numGuesses++;
+		this.isGuessed = true;
 		this.btn_guess.setText(getString(R.string.guess_again_btn));
 
 		if (!this.et_guess.getText().toString().equals("")) {
-			
-			this.numGuesses++;
-			this.isGuessed = true;
 
 			String guess = this.et_guess.getText().toString();
 			String check = this.check.compare(Integer.parseInt(this.number),
@@ -232,10 +231,9 @@ public class MainActivity extends ActionBarActivity implements TextWatcher {
 
 	}
 
-	public void toast(String msg) {
+	private void toast(String msg) {
 
-		Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
-		;
+		Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
 
 	}
 
