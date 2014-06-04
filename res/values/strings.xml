@@ -48,9 +48,9 @@
     <string name="pref_num_guesses">numGuesses</string>
     <string name="and">and</string>
     <string name="min_difference">5</string>
-    <string name="high">high</string>
-    <string name="low">low</string>
-    <string name="correct">correct</string>
+    <string name="high">too high</string>
+    <string name="low">too low</string>
+    <string name="correct">correct!!!</string>
     <string name="toast_guess">Your guess is</string>
     <string name="guesses">guesses</string>
     <string name="no_number">Please enter a number to make a guess!</string>
