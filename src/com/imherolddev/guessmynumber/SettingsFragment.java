@@ -51,9 +51,6 @@ public class SettingsFragment extends PreferenceFragment implements
 		String[] difficulty = res.getStringArray(R.array.difficulty);
 		SharedPreferences.Editor editor = sharedPreferences.edit();
 
-		editor.putBoolean(getString(R.string.pref_is_guessed), false);
-		editor.putInt(getString(R.string.pref_num_guesses), 0);
-
 		if (key.equals(getString(R.string.pref_diff_key))) {
 
 			switch (Arrays.asList(difficulty).indexOf(
@@ -89,6 +86,10 @@ public class SettingsFragment extends PreferenceFragment implements
 
 			}
 		}
+
+		editor.putBoolean(getString(R.string.pref_is_guessed), false);
+		editor.putInt(getString(R.string.pref_num_guesses), 0);
+		editor.commit();
 
 		minimum.setText(sharedPreferences.getString(
 				getString(R.string.pref_min_key), getString(R.string.zero)));

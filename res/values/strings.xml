@@ -58,6 +58,6 @@
     <string name="number_key">number</string>
     <string name="warn_low">Maximum must be higher than minimum</string>
     <string name="warn_high">Minimum must be lower than maximum</string>
-    <string name="warn_diff">Maximum must be 4 more than minimum</string>
+    <string name="warn_diff">Maximum must be 5 more than the minimum</string>
 
 </resources>

@@ -14,15 +14,6 @@
         android:text="@string/action_about"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <Button
-        android:id="@+id/btn_return"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="goBack"
-        android:text="@string/btn_return" />
-
     <TextView
         android:id="@+id/tv_about_body"
         android:layout_width="wrap_content"
