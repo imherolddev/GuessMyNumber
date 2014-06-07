@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,7 +18,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends ActionBarActivity implements TextWatcher {
+public class MainActivity extends ActionBarActivity {
 
 	SharedPreferences sharedPrefs;
 	private NumberGenerator gen = new NumberGenerator();
@@ -53,8 +51,6 @@ public class MainActivity extends ActionBarActivity implements TextWatcher {
 
 		this.et_guess = (EditText) findViewById(R.id.et_guess);
 		this.btn_guess = (Button) findViewById(R.id.btn_guess);
-
-		this.et_guess.addTextChangedListener(this);
 
 		return null;
 
@@ -234,25 +230,6 @@ public class MainActivity extends ActionBarActivity implements TextWatcher {
 	private void toast(String msg) {
 
 		Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-
-	}
-
-	@Override
-	public void beforeTextChanged(CharSequence s, int start, int count,
-			int after) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onTextChanged(CharSequence s, int start, int before, int count) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void afterTextChanged(Editable s) {
-		// TODO Auto-generated method stub
 
 	}
 

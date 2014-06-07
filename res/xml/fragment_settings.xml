@@ -11,7 +11,7 @@
         android:key="@string/pref_min_key"
         android:maxLength="3"
         android:summary="@string/min_pref_summary"
-        android:title="@string/min_pref_title" />
+        android:title="@string/min_pref_title" android:enabled="false"/>
     <EditTextPreference
         android:defaultValue="@string/hundred"
         android:dialogMessage="@string/et_max_pref"
@@ -20,7 +20,7 @@
         android:key="@string/pref_max_key"
         android:maxLength="3"
         android:summary="@string/max_pref_summary"
-        android:title="@string/max_pref_title" />
+        android:title="@string/max_pref_title" android:enabled="false"/>
 
     <ListPreference
         android:defaultValue="none"

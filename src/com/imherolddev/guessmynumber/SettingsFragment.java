@@ -53,6 +53,10 @@ public class SettingsFragment extends PreferenceFragment implements
 
 		if (key.equals(getString(R.string.pref_diff_key))) {
 
+			minPref.setEnabled(false);
+			maxPref.setEnabled(false);
+			editor.putBoolean(getString(R.string.isCustom), false);
+
 			switch (Arrays.asList(difficulty).indexOf(
 					sharedPreferences.getString(key,
 							getString(R.string.pref_diff_key)))) {
@@ -80,6 +84,11 @@ public class SettingsFragment extends PreferenceFragment implements
 						getString(R.string.hundred));
 				editor.commit();
 				break;
+
+			case 3:
+				minPref.setEnabled(true);
+				maxPref.setEnabled(true);
+				editor.putBoolean(getString(R.string.isCustom), true).commit();
 
 			default:
 				break;
@@ -112,6 +121,28 @@ public class SettingsFragment extends PreferenceFragment implements
 		super.onResume();
 		getPreferenceScreen().getSharedPreferences()
 				.registerOnSharedPreferenceChangeListener(this);
+
+		sharedPrefs = PreferenceManager
+				.getDefaultSharedPreferences(getActivity());
+
+		if (sharedPrefs.getBoolean(getString(R.string.isCustom), false)) {
+
+			this.minPref.setEnabled(true);
+			this.minPref
+					.setSummary(sharedPrefs.getString(
+							getString(R.string.pref_min_key),
+							getString(R.string.zero)));
+			this.maxPref.setEnabled(true);
+			this.maxPref.setSummary(sharedPrefs.getString(
+					getString(R.string.pref_max_key),
+					getString(R.string.twentyFive)));
+
+		} else {
+
+			this.minPref.setEnabled(false);
+			this.maxPref.setEnabled(false);
+
+		}
 
 	}
 

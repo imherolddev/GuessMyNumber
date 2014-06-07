@@ -28,6 +28,7 @@
         <item>Easy</item>
         <item>Medium</item>
         <item>Hard</item>
+        <item>Custom</item>
     </string-array>
 
     <string name="difficulty_dialog_title">Select your difficulty level</string>
@@ -59,5 +60,6 @@
     <string name="warn_low">Maximum must be higher than minimum</string>
     <string name="warn_high">Minimum must be lower than maximum</string>
     <string name="warn_diff">Maximum must be 5 more than the minimum</string>
+    <string name="isCustom">custom</string>
 
 </resources>
