@@ -7,18 +7,22 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements
+		OnEditorActionListener {
 
 	SharedPreferences sharedPrefs;
 	private NumberGenerator gen = new NumberGenerator();
@@ -50,6 +54,7 @@ public class MainActivity extends ActionBarActivity {
 	public View onCreatePanelView(int featureId) {
 
 		this.et_guess = (EditText) findViewById(R.id.et_guess);
+		this.et_guess.setOnEditorActionListener(this);
 		this.btn_guess = (Button) findViewById(R.id.btn_guess);
 
 		return null;
@@ -225,12 +230,26 @@ public class MainActivity extends ActionBarActivity {
 
 		}
 
+		this.et_guess.setText("");
+
 	}
 
 	private void toast(String msg) {
 
 		Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
 
+	}
+
+	@Override
+	public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+		if (actionId == EditorInfo.IME_ACTION_DONE || event != null) {
+
+			this.compareGuess(v);
+
+		}
+
+		return false;
 	}
 
 }
